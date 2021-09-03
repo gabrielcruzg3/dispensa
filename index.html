@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dispensa</title>
+    <script src="/js/dispensa.js">listaProdutoHave()</script>
 </head>
 <body>
     <center><h1>Let's go shoppping?</h1></center>
@@ -14,24 +15,24 @@
 
         <form action="" method="get">
             <ul>
-                Nome do Produto:
-                <input type="text" name="nameHave" id="">
+                Código de Barras:
+                <input type="number" name="" id="barCodeHave">
             </ul>
-            <!-- <ul>
+            <ul>
+                Nome do Produto:
+                <input type="text" name="" id="nameHave">
+            </ul>
+            <ul>
                 Preço esperado:
                 <input type="number" name="priceHint" id="">
-            </ul> -->
+            </ul>
             <ul>
                 Quantidade:
-                <input type="number" name="amountHave" id="">
+                <input type="number" name="" id="amountHave">
             </ul>
-            <input type="hidden" name="idHave">
+            <input type="hidden" id="idHave">
             <ul>
-                Código de Barras:
-                <input type="number" name="barCodeHave" id="">
-            </ul>
-            <ul>
-                <input type="submit" value="Cadastrar">
+                <input type="submit" value="Cadastrar" onclick="cadastraProdutoHave()">
             </ul>
         </form>        
 
@@ -43,32 +44,92 @@
 
         <form action="" method="get">
             <ul>
+                Código de Barras:
+                <input type="number" name="" id="barCodeBuy">
+            </ul>
+            <ul>
                 Nome do Produto:
-                <input type="text" name="nameBuy" id="">
+                <input type="text" name="" id="nameBuy">
             </ul>
             <ul>
                 Preço:
-                <input type="number" name="priceBuy" id="">
+                <input type="number" name="" id="priceBuy">
             </ul>
             <ul>
                 Quantidade:
-                <input type="number" name="amountBuy" id="">
+                <input type="number" name="" id="amountBuy">
             </ul>
             <ul>
                 Store:
-                <input type="text" name="store" id="">
+                <input type="text" name="" id="store">
             </ul>
-            <input type="hidden" name="idBuy">
-            <ul>
-                Código de Barras:
-                <input type="number" name="barCodeBuy" id="">
-            </ul>
+            <input type="hidden" id="idBuy">
             <ul>
                 <input type="submit" value="Comprado ">
             </ul>
         </form>        
 
     </section> 
+    <!--
+    <section>
+        <h3>Minha Dispensa... :) ou :( ?</h3>
+
+        <table>
+           <thead>
+               <tr>
+                   <th>Nome do Produto:</th>
+                   <th>Preço do Produto:</th>
+                   <th>Quantidade do Produto:</th>
+                   <th>Código de Barras do Produto:</th>
+               </tr>
+           </thead>
+           <tbody id="listaProduto">
+               <tr >
+                   <td>11</td>
+                   <td>12</td>
+               </tr>
+               
+           </tbody>      
+        </table>
+        
+    </section>
+    -->
+    <!--  -->
+    <section>
+        <h3>O que tenho?:</h3>
+        <table>
+        <thead>
+            <tr>
+                <th>Nome do Produto:</th>
+                <th>Preço do Produto:</th>
+                <th>Quantidade do Produto:</th>
+                <th>Código de Barras do Produto:</th>
+            </tr>
+        </thead>
+        <tbody id="listaProdutoHave">
+            <!--  -->
+        </tbody>      
+     </table>
+    </section>
+    <!--  -->
+    <!--  -->
+    <section>
+        <h3>O que pretendo comprar?:</h3>
+        <table>
+        <thead>
+            <tr>
+                <th>Nome do Produto: </th>
+                <th>Preço do Produto: </th>
+                <th>Quantidade do Produto: </th>
+                <th>Código de Barras do Produto: </th>
+                <th>Store: </th>
+            </tr>
+        </thead>
+        <tbody id="listaProdutoBuy">
+            <!--  -->
+        </tbody>      
+     </table>
+    </section>
     <!--  -->
 </body>
 </html>
