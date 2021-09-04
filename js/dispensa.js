@@ -6,11 +6,11 @@
         var amountHave = document.getElementById('amountHave')
         // var idHave = document.getElementById('idHave')
 
-        localStorage.setItem('barCodeHave' + [i], barCodeHave)
-        localStorage.setItem('nameHave' + [i], nameHave)
-        localStorage.setItem('priceHint' + [i], priceHint)
-        localStorage.setItem('amountHave' + [i], amountHave)
-        localStorage.setItem('idHave' + [i], idHave)
+        localStorage.setItem('barCodeHave' + [i], barCodeHave.value)
+        localStorage.setItem('nameHave' + [i], nameHave.value)
+        localStorage.setItem('priceHint' + [i], priceHint.value)
+        localStorage.setItem('amountHave' + [i], amountHave.value)
+        localStorage.setItem('idHave', [i])
     }
 // fim set itensHave //********************************
 
@@ -33,6 +33,9 @@
 //fim itensBuy //********************************
 
 function cadastraProdutoHave(){
+
+    i = localStorage.getItem('idHave')
+
     if( i == 0){        
         setItensHave();
         i++; 
@@ -111,7 +114,8 @@ function listaProdutoBuy(){
     
     
     var trLista = document.createElement('tr')
-        trLista.id = "trListaBuy"
+        trLista.id = "trListaBuy"+[i]
+
     var tdLista = document.createElement('td')
         tdLista.id = "tdListaBuy" + [i]
 
