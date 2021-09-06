@@ -20,12 +20,12 @@ function setItensBuy(){
     var store = document.getElementById('store')
     // var idBuy = document.getElementById('idBuy')
 
-    localStorage.setItem('barCodeBuy' + [i], barCodeBuy)
-    localStorage.setItem('nameBuy' + [i], nameBuy)
-    localStorage.setItem('priceBuy' + [i], priceBuy)
-    localStorage.setItem('amountBuy' + [i], amountBuy)
-    localStorage.setItem('store' + [i], store)
-    localStorage.setItem('idBuy' + [i], idBuy)
+    localStorage.setItem('barCodeBuy' + i, barCodeBuy.value)
+    localStorage.setItem('nameBuy' + i, nameBuy.value)
+    localStorage.setItem('priceBuy' + i, priceBuy.value)
+    localStorage.setItem('amountBuy' + i, amountBuy.value)
+    localStorage.setItem('store' + i, store.value)
+    localStorage.setItem('idBuy', i)
 }
 
 function cadastraProdutoHave(){
@@ -49,16 +49,22 @@ function cadastraProdutoHave(){
 }
 
 function cadastraProdutoBuy(){
-    if( i == 0){
+    idBuy = localStorage.getItem('idBuy')
+
+    if( idBuy == null){
+        i=0
         setItensBuy();
         i++;
         localStorage.setItem('idBuy', i)
     }
     else{
+        i = idBuy
         setItensBuy();
         i++;
         localStorage.setItem('idBuy', i)
     }
+
+    listaProdutoBuy()
 }
 
 // function getItensHave(){
@@ -77,7 +83,7 @@ function cadastraProdutoBuy(){
 function listaProdutoHave(){
     
     idHave = localStorage.getItem('idHave')
-    console.log(idHave)
+    
     i=0;
 
     for (let i = 0; i <= idHave; i++){
@@ -125,12 +131,51 @@ function listaProdutoHave(){
 
 function listaProdutoBuy(){   
         
-    var trLista = document.createElement('tr')
-        trLista.id = "trListaBuy"+[i]
+    idBuy = localStorage.getItem('idBuy')
+    
+    i=0;
 
-    var tdLista = document.createElement('td')
-        tdLista.id = "tdListaBuy" + [i]
+    for (let i = 0; i <= idBuy; i++){
+    
+        var trListaBuy = document.createElement('tr')
+            trListaBuy.id = "trListaBuy" + i       
+        
+        
+        var tbodyListaProdutos = document.querySelector('#listaProdutoBuy');
+            tbodyListaProdutos.appendChild(trListaBuy)
 
-    tbodyListaProdutos.appendChild(trLista)
-        trLista.appendChild(tdLista)
+        let barCodeBuy = document.createElement('td')
+            barCodeBuy.id = "barCodeBuyList"+ i
+            
+        let nameBuy = document.createElement('td')
+            nameBuy.id = "nameBuyList"+ i
+
+        let priceBuy = document.createElement('td')
+            priceBuy.id = "priceBuyList"+ i
+            
+        let amountBuy = document.createElement('td')
+            amountBuy.id = "amountBuyList"+ i
+
+        let store = document.createElement('td')
+            store.id = "storeList"+ i
+        
+        trListaBuy.appendChild(barCodeBuy)
+        trListaBuy.appendChild(nameBuy)
+        trListaBuy.appendChild(priceBuy)
+        trListaBuy.appendChild(amountBuy) 
+        trListaBuy.appendChild(store) 
+
+        var barCodeBuyList = document.getElementById('barCodeBuyList'+ i)
+        var nameBuyList = document.getElementById('nameBuyList'+ i)
+        var priceBuyList = document.getElementById('priceBuyList'+ i)
+        var amountBuyList = document.getElementById('amountBuyList'+ i)
+        var storeList = document.getElementById('storeList'+ i)
+        // let idBuyList = document.getElementById('idBuyList')
+    
+        barCodeBuyList.innerHTML = localStorage.getItem('barCodeBuy'+i)
+        nameBuyList.innerHTML = localStorage.getItem('nameBuy'+i)
+        priceBuyList.innerHTML = localStorage.getItem('priceBuy'+i)
+        amountBuyList.innerHTML = localStorage.getItem('amountBuy'+i)
+        storeList.innerHTML = localStorage.getItem('store')
+    }   
 }
