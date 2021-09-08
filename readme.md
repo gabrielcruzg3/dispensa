@@ -8,7 +8,8 @@
 
 proximos passos:
 #evoluir para um framework: react? next.js? 
-#back-end php pra testes(offline)?
+#back-end php pra testes(offline)? http://dispensa.rf.gd/
+#database com Firebase?
 verificação(form empty, e o que for necessário "*", )
 buscar barCode para listar produto automaticamente(obter da internet, inclusive imagens)
 button apagar tudo e então individualmente
