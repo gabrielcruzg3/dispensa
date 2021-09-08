@@ -1,3 +1,16 @@
+function utcDate(dateUtc){
+    var date = new Date(); 
+    var dateUtc = Date.UTC(
+        date.getUTCFullYear(),
+        date.getUTCMonth(), 
+        date.getUTCDate(),
+        date.getUTCHours(), 
+        date.getUTCMinutes(), 
+        date.getUTCSeconds()
+    );
+
+ return dateUtc;
+}
 function setItensHave(){
     var barCodeHave = document.getElementById('barCodeHave')
     var nameHave = document.getElementById('nameHave')
@@ -10,6 +23,7 @@ function setItensHave(){
     localStorage.setItem('priceHint' + i, priceHint.value)
     localStorage.setItem('amountHave' + i, amountHave.value)
     localStorage.setItem('idHave', i)
+    localStorage.setItem('dateHave', utcDate())
     }
 
 function setItensBuy(){
@@ -26,6 +40,7 @@ function setItensBuy(){
     localStorage.setItem('amountBuy' + i, amountBuy.value)
     localStorage.setItem('store' + i, store.value)
     localStorage.setItem('idBuy', i)
+    localStorage.setItem('dateBuy', utcDate())
 }
 
 function cadastraProdutoHave(){
